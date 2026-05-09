@@ -66,7 +66,7 @@ def camera():
         return None
 
     cv2.imshow("Camera", frame)
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = haarCas.detectMultiScale(frame, 1.3, 3) 
     if len(faces) == 0:
         return None
@@ -119,7 +119,7 @@ while running :
 
     meth(pupilL)
     
-    pupilL.x = pupilL.start_pos[0] + pupilL.dist[0]
+    pupilL.x = pupilL.start_pos[0] - pupilL.dist[0]
     pupilL.y = pupilL.start_pos[1] + pupilL.dist[1]
     
     pupilR.x = pupilL.x + 300
